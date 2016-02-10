@@ -16,6 +16,6 @@ angular.module('trippyApp')
     };
 
     $scope.addMember = function(member) {
-      $scope.trip.members.push(member);
+      $scope.trip.members.push(angular.copy(member));
     };
 });
