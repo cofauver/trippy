@@ -172,7 +172,7 @@ gulp.task('client:build', ['html', 'styles'], function () {
     .pipe($.minifyCss({cache: true}))
     .pipe(cssFilter.restore())
     .pipe($.rev())
-    .pipe($.useref.restore())
+    .pipe($.useref.assets().restore())
     .pipe($.revReplace())
     .pipe($.useref())
     .pipe(gulp.dest(yeoman.dist));

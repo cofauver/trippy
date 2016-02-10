@@ -1,0 +1,20 @@
+<h1>{{ trip.name }}</h1>
+<h2>{{ trip.description }}</h2>
+
+<ul>
+  <li ng-repeat="member in trip.members">{{ member.name }}
+    <button class="btn btn-danger" ng-click="removeMember(member)">
+      <span class="glyphicon glyphicon-remove"></span>
+    </button>
+  </li>
+</ul>
+
+<button class="btn btn-primary" ng-click="showForm = !showForm">Add member</button>
+<form ng-show="showForm" ng-submit="addMember(newMember)"> 
+  <h1>Add Member</h1>
+  <fieldset class="form-group">
+    <label>Name</label>
+    <input ng-model="newMember.name" class="form-control" type="text">
+  </fieldset>
+  <input class="btn btn-primary" type="submit" >
+</form>
