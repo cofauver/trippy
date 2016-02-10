@@ -1,23 +1,20 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+<button class="btn btn-primary" ng-click="showForm = !showForm">Add trip</button>
+<form ng-show="showForm" ng-submit="addTrip(newTrip)"> 
+  <h1>Create trip</h1>
+  <fieldset class="form-group">
+    <label>Group Name</label>
+    <input ng-model="newTrip.name" class="form-control" type="text">
+  </fieldset>
+  <fieldset class="form-group">
+    <label>Trip Description</label>
+    <input ng-model="newTrip.description" class="form-control" type="text">
+  </fieldset>
+  <input class="btn btn-primary" type="submit" >
+</form>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+<ul>
+  <li ng-repeat="trip in trips">
+    <h1>{{trip.name}}</h1> 
+    <p>{{trip.description}}</p> 
+  </li>
+</ul>
